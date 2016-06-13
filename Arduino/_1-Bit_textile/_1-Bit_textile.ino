@@ -45,23 +45,21 @@ void loop() {
 }
 
 void turnLeft( const int IOA, const int IOB, int pulse, int del ) {
+  digitalWrite (IOA, LOW);
   for (int i = 0; i < pulse; i++) {
-    digitalWrite (IOA, LOW);
     digitalWrite (IOB, HIGH);
     delayMicroseconds(del);
-    digitalWrite (IOA, LOW);
     digitalWrite (IOB, LOW);
     delayMicroseconds(del);
   }
 }
 
 void turnRight( const int IOA, const int IOB, int pulse, int del ) {
+  digitalWrite (IOB, LOW);
   for (int i = 0; i < pulse; i++) {
     digitalWrite (IOA, HIGH);
-    digitalWrite (IOB, LOW);
     delayMicroseconds(del);
     digitalWrite (IOA, LOW);
-    digitalWrite (IOB, LOW);
     delayMicroseconds(del);
   }
 }
